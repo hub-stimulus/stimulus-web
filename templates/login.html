@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}" />
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Estilos CSS para tornar a página responsiva para dispositivos móveis */
-        /* ... */
-    </style>
 </head>
 <body>
-    <h1>Login</h1>
+
+    <div class="logo">
+        <img src=" {{url_for('static',filename='img/logo.png')}}" alt="Logo da Empresa">
+    </div>
     <form method="POST">
+      <div class="container">
         <label for="email">Email:</label>
         <input type="email" name="email" required><br>
         <label for="senha">Senha:</label>
         <input type="password" name="senha" required><br>
         <input type="submit" value="Login">
+      </div>
     </form>
     <a href="/cadastro">Cadastrar</a>
 </body>
