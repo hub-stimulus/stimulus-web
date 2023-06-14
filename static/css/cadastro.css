@@ -54,21 +54,19 @@ a {
 }
 
 @media screen and (max-width: 480px) {
-    form {
-        padding: 10px;
-    }
+
 
     input[type="text"],
     input[type="email"],
     input[type="date"],
     input[type="password"] {
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     input[type="submit"] {
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     h1 {
