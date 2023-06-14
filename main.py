@@ -80,7 +80,7 @@ def cadastro():
         with open(file_path, 'w') as file:
             file.write(json_data)
           
-        return redirect(url_for('/'))
+        return redirect('/')
 
     return render_template('cadastro.html')
 
