@@ -1,23 +1,330 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/cadastro.css')}}" />
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/cadastro.css')}}"
+    />
     <title>Cadastro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
     <h1>Cadastro</h1>
     <form method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" required><br>
-        <label for="email">Email:</label>
-        <input type="email" name="email" required><br>
-        <label for="data_aniversario">Data de Aniversário:</label>
-        <input type="date" name="data_aniversario" required><br>
-        <label for="senha">Senha:</label>
-        <input type="password" name="senha" required><br>
-        <input type="submit" value="Cadastrar">
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" required /><br />
+      <label for="email">Email:</label>
+      <input type="email" name="email" required /><br />
+      <label for="data_aniversario">Data de Aniversário:</label>
+      <input type="date" name="data_aniversario" required /><br />
+      <label for="senha">Senha:</label>
+      <input type="password" name="senha" required /><br />
+
+      <div class="form-group">
+        <label for="sexo">Sexo:</label>
+        <div class="row-choices">
+          <input type="radio" id="feminino" name="sexo" value="feminino" />
+          <label for="feminino">Feminino</label>
+        </div>
+        <div class="row-choices">
+          <input type="radio" id="masculino" name="sexo" value="masculino" />
+          <label for="masculino">Masculino</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="escolaridade">Escolaridade:</label>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="alfabetizado"
+            name="escolaridade"
+            value="alfabetizado"
+          />
+          <label for="alfabetizado">Alfabetizado</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="fundamental"
+            name="escolaridade"
+            value="fundamental"
+          />
+          <label for="fundamental">Fundamental</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="ensino-medio"
+            name="escolaridade"
+            value="ensino-medio"
+          />
+          <label for="ensino-medio">Ensino Médio</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="superior-pos"
+            name="escolaridade"
+            value="superior-pos"
+          />
+          <label for="superior-pos">Curso Superior ou Pós-Graduação</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="regiao-brasil">Mora em que região do Brasil?</label>
+        <div class="row-choices">
+          <input type="checkbox" id="sul" name="regiao-brasil" value="sul" />
+          <label for="sul">Sul</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="sudeste"
+            name="regiao-brasil"
+            value="sudeste"
+          />
+          <label for="sudeste">Sudeste</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="centro-oeste"
+            name="regiao-brasil"
+            value="centro-oeste"
+          />
+          <label for="centro-oeste">Centro-Oeste</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="norte"
+            name="regiao-brasil"
+            value="norte"
+          />
+          <label for="norte">Norte</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="nordeste"
+            name="regiao-brasil"
+            value="nordeste"
+          />
+          <label for="nordeste">Nordeste</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="renda">Indique a faixa de renda mensal de sua casa:</label>
+        <div class="row-choices">
+          <input type="radio" id="ate-2mil" name="renda" value="ate-2mil" />
+          <label for="ate-2mil">Até 2 mil reais</label>
+        </div>
+        <div class="row-choices">
+          <input type="radio" id="3mil-5mil" name="renda" value="3mil-5mil" />
+          <label for="3mil-5mil">3 mil a 5 mil reais</label>
+        </div>
+        <div class="row-choices">
+          <input type="radio" id="mais-6mil" name="renda" value="mais-6mil" />
+          <label for="mais-6mil">Mais de 6 mil reais</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="teve-covid">Você teve COVID-19?</label>
+        <div class="row-choices">
+          <input
+            type="radio"
+            id="sim-teve-covid"
+            name="teve-covid"
+            value="sim"
+          />
+          <label for="sim-teve-covid">Sim</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="radio"
+            id="nao-teve-covid"
+            name="teve-covid"
+            value="nao"
+          />
+          <label for="nao-teve-covid">Não</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sequelas">Se sim, teve sequelas?</label>
+        <div class="row-choices">
+          <input type="radio" id="sim-sequelas" name="sequelas" value="sim" />
+          <label for="sim-sequelas">Sim</label>
+        </div>
+        <div class="row-choices">
+          <input type="radio" id="nao-sequelas" name="sequelas" value="nao" />
+          <label for="nao-sequelas">Não</label>
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+        <label for="tratamento-cognitivo"
+          >Tem feito algum tratamento para alteração na sua cognição?</label
+        >
+        <div class="row-choices">
+          <input
+            type="radio"
+            id="sim-tratamento-cognitivo"
+            name="tratamento-cognitivo"
+            value="sim"
+          />
+          <label for="sim-tratamento-cognitivo">Sim</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="radio"
+            id="nao-tratamento-cognitivo"
+            name="tratamento-cognitivo"
+            value="nao"
+          />
+          <label for="nao-tratamento-cognitivo">Não</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mudancas-cognitivas"
+          >Você percebeu mudanças na sua capacidade cognitiva depois da
+          COVID-19?</label
+        >
+        <div class="row-choices">
+          <input
+            type="radio"
+            id="sim-mudancas-cognitivas"
+            name="mudancas-cognitivas"
+            value="sim"
+          />
+          <label for="sim-mudancas-cognitivas">Sim</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="radio"
+            id="nao-mudancas-cognitivas"
+            name="mudancas-cognitivas"
+            value="nao"
+          />
+          <label for="nao-mudancas-cognitivas">Não</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mudancas-cognitivas-quais">Se sim, qual?</label>
+
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="memoria"
+            name="mudancas-cognitivas-quais"
+            value="memoria"
+          />
+          <label for="memoria">Memória</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="aprendizado"
+            name="mudancas-cognitivas-quais"
+            value="aprendizado"
+          />
+          <label for="aprendizado">Aprendizado</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="concentracao"
+            name="mudancas-cognitivas-quais"
+            value="concentracao"
+          />
+          <label for="concentracao">Concentração</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="atencao"
+            name="mudancas-cognitivas-quais"
+            value="atencao"
+          />
+          <label for="atencao">Atenção</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="humor"
+            name="mudancas-cognitivas-quais"
+            value="humor"
+          />
+          <label for="humor">Humor</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="checkbox"
+            id="sono"
+            name="mudancas-cognitivas-quais"
+            value="sono"
+          />
+          <label for="sono">Sono</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="atividade-fisica">Pratica atividade física?</label>
+
+        <div class="row-choices">
+          <input
+            type="radio"
+            id="sim-atividade-fisica"
+            name="atividade-fisica"
+            value="sim"
+          />
+          <label for="sim-atividade-fisica">Sim</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="radio"
+            id="nao-atividade-fisica"
+            name="atividade-fisica"
+            value="nao"
+          />
+          <label for="nao-atividade-fisica">Não</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="doenca-associada"
+          >Possui doença associada a COVID-19?</label
+        >
+
+        <div class="row-choices">
+          <input
+            type="radio"
+            id="sim-doenca-associada"
+            name="doenca-associada"
+            value="sim"
+          />
+          <label for="sim-doenca-associada">Sim</label>
+        </div>
+        <div class="row-choices">
+          <input
+            type="radio"
+            id="nao-doenca-associada"
+            name="doenca-associada"
+            value="nao"
+          />
+          <label for="nao-doenca-associada">Não</label>
+        </div>
+      </div>
+
+      <input type="submit" value="Cadastrar" />
     </form>
     <a href="/">Voltar para o Login</a>
-</body>
+  </body>
 </html>
