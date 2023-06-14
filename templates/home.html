@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}" />
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Estilos CSS para tornar a página responsiva para dispositivos móveis */
-        /* ... */
-    </style>
 </head>
 <body>
-    <h1>Bem-vindo à Home!</h1>
-    <!-- Conteúdo da página home -->
+    <div class="header">
+        <div class="column-header">
+            <img src="{{url_for('static',filename='img/foto.png')}}" alt="Foto de Perfil">
+            <span>Nome do Usuário</span>
+        </div>
+        <button onclick="location.href='/'">Sair</button>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <h2>Card 1</h2>
+            <p>Conteúdo do Card 1.</p>
+        </div>
+        <div class="card">
+            <h2>Card 2</h2>
+            <p>Conteúdo do Card 2.</p>
+        </div>
+        <div class="card">
+            <h2>Card 3</h2>
+            <p>Conteúdo do Card 3.</p>
+        </div>
+    </div>
 </body>
 </html>
+
