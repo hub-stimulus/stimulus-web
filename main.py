@@ -19,7 +19,7 @@ def login():
 
         data = json.loads(json_data)
         
-        print(email,senha,data['email'],data['senha'])
+        #print(email,senha,data['email'],data['senha'])
         if data['email'] == email and data['senha'] == senha:
             return render_template('home.html', data=data)
         else:
@@ -83,10 +83,6 @@ def cadastro():
         return redirect(url_for('/'))
 
     return render_template('cadastro.html')
-
-@app.route('/home')
-def home():
-    return render_template('home.html')
 
 if __name__ == '__main__':
   print('Rodando api...')
