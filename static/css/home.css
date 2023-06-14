@@ -53,6 +53,8 @@ body {
     border-radius: 3px;
 }
 
+
+
 .card h2 {
     margin-bottom: 10px;
 }
@@ -62,6 +64,11 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+
+    .column-header span{
+        font-size: x-small;
+    }
+    
     .header img {
         max-width: 50px;
     }
