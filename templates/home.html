@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}" />
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/home.css')}}"
+    />
     <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
     <div class="header">
-        <div class="column-header">
-            <img src="{{url_for('static',filename='img/foto.png')}}" alt="Foto de Perfil">
-            <span>{{data.nome}}</span>
-        </div>
-        <button onclick="location.href='/'">Sair</button>
+      <div class="column-header">
+        <img
+          src="{{url_for('static',filename='img/foto.png')}}"
+          alt="Foto de Perfil"
+        />
+        <span>{{data.nome}}</span>
+      </div>
+      <button onclick="location.href='/'">Sair</button>
     </div>
     <div class="cards">
-        <div class="card">
-            <h2>Email</h2>
-            <p>{{data.email}}</p>
-        </div>
-        <div class="card">
-            <h2>Data Aniversário</h2>
-            <p>{{data.data_aniversario}}</p>
-        </div>
-        <div class="card">
-            <h2>Região</h2>
-            <p>{{data.regiao_brasil}}</p>
-        </div>
+      <div class="card">
+        <h2>Email</h2>
+        <p>{{data.email}}</p>
+      </div>
+      <div class="card">
+        <h2>Data Aniversário</h2>
+        <p>{{data.data_aniversario}}</p>
+      </div>
+      <div class="card">
+        <h2>Região</h2>
+        <p>{{data.regiao_brasil}}</p>
+      </div>
+      <div class="card" style="border-radius: 15px">
+        <h2>Lista de Jogos</h2>
+        <div class="card-list">
+            <div class="card-jogos">
+              <span class="card-name">Jogo 1</span>
+              <span class="card-arrow">&#10132;</span>
+            </div>
+            <div class="card-jogos">
+              <span class="card-name">Jogo 2</span>
+              <span class="card-arrow">&#10132;</span>
+            </div>
+            <div class="card-jogos">
+              <span class="card-name">Jogo 3</span>
+              <span class="card-arrow">&#10132;</span>
+            </div>
+          </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
-
