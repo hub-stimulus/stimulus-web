@@ -17,8 +17,12 @@
         />
         <span>{{data.nome}}</span>
       </div>
+
       <button onclick="location.href='/'">Sair</button>
     </div>
+    {% if admin.admin == True %}
+    <button class="btn" onclick="location.href='/listar'">Listar</button>
+  {% endif %}
     <div class="cards">
       <div class="card">
         <h2>Email</h2>

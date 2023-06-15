@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-info {
+            width: 200px;
+            height: 150px;
+            padding: 10px;
+            margin: 5px;
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
+        .btn {
+    padding:  16px 32px;
+    background-color: #6bd8f9;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+        .card-info strong {
+            font-weight: bold;
+        }
+
+        /* Responsividade */
+        @media only screen and (max-width: 600px) {
+            .card-info {
+                width: 100%;
+                height: auto;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="total-registros">Total de Registros:{{data.total_arquivos}} </h2>
+    <div class="card-list">
+        {%for i in range(0, len)%}
+        <div class="card">
+            <h3 class="card-title">Registro {{i+1}}</h3>
+            <div class="card-details">
+                <div class="card-info">
+                    <p><strong>Nome:</strong> {{data.dados[i]['nome']}}</p>
+                    <p><strong>Email:</strong> {{data.dados[i]['email']}}</p>
+                    <p><strong>Data de Aniversário:</strong>{{data.dados[i]['data_aniversario']}}</p>
+                    <p><strong>Sexo:</strong> {{data.dados[i]['sexo']}}</p>
+                </div>
+                <div class="card-info">
+                    <p><strong>Escolaridade:</strong> {{data.dados[i]['escolaridade']}}</p>
+                    <p><strong>Região do Brasil:</strong> {{data.dados[i]['regiao_brasil']}}</p>
+                    <p><strong>Faixa de Renda:</strong> {{data.dados[i]['faixa_renda']}}</p>
+                    <p><strong>Teve COVID-19:</strong> {{data.dados[i]['teve_covid']}}</p>
+                </div>
+                <div class="card-info">
+                    <p><strong>Sequelas:</strong> {{data.dados[i]['sequelas']}}</p>
+                    <p><strong>Mudanças Cognitivas:</strong> {{data.dados[i]['mudancas_cognitivas']}}</p>
+                    <p><strong>Mudanças Cognitivas - Quais:</strong> {{data.dados[i]['mudancas_cognitivas_quais']}}</p>
+                    <p><strong>Pratica Atividade Física:</strong> {{data.dados[i]['atividade_fisica']}}</p>
+                </div>
+                <div class="card-info">
+                    <p><strong>Doença Associada à COVID-19:</strong> {{data.dados[i]['doenca_associada']}}</p>
+                    <p><strong>Tratamento Cognitivo:</strong> {{data.dados[i]['tratamento_cognitivo']}}</p>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</body>
+
+</html>

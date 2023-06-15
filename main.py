@@ -18,10 +18,12 @@ def login():
             json_data = file.read()
 
         data = json.loads(json_data)
-        
-        #print(email,senha,data['email'],data['senha'])
+        admin = False
+        if email=='admin@admin.com':
+            admin = True
+
         if data['email'] == email and data['senha'] == senha:
-            return render_template('home.html', data=data)
+            return render_template('home.html', data=data,admin={'admin':admin})
         else:
             return render_template('login.html')
 
@@ -83,6 +85,24 @@ def cadastro():
         return redirect('/')
 
     return render_template('cadastro.html')
+
+@app.route('/listar', methods=['GET'])
+def listar():
+    dados_combinados = []
+    for arquivo in os.listdir(os.path.join(os.getcwd(), 'data')):
+        if arquivo.endswith('.json'):
+            caminho_arquivo = os.path.join(os.path.join(os.getcwd(), 'data'), arquivo)
+        
+            with open(caminho_arquivo, 'r') as file:
+                dados_json = json.load(file)
+            
+            dados_combinados.append(dados_json)
+
+    objeto_combinado = {
+    'dados': dados_combinados,
+    'total_arquivos': len(dados_combinados)
+                                            }
+    return render_template('listar.html',data=objeto_combinado,len=len(dados_combinados))
 
 if __name__ == '__main__':
   print('Rodando api...')
